@@ -51,3 +51,7 @@
 .hidden {
   display: none;
 }
+
+.text {
+  font-size: 3rem;
+}

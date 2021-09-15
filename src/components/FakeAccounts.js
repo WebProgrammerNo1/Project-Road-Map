@@ -1,5 +1,6 @@
 const account1 = {
   login: "kahhorjonov",
+  owner: 'Akbarjon Qoxorjonov',
   pin: 1204,
 };
 

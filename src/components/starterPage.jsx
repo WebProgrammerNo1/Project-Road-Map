@@ -15,7 +15,7 @@ class StarterPage extends Component {
     const currentAccountPassword = document.querySelector(".password").value;
     const adminPage = document.querySelector(".adminPage");
     const appPage = document.querySelector(".App");
-    let currentAccount;
+    var currentAccount;
 
     currentAccount = accounts.find((acc) => acc.login === currentAccountLogin);
 
@@ -59,7 +59,8 @@ class StarterPage extends Component {
         </div>
 
         <div className="adminPage hidden">
-          <p>Hello Friend</p>
+          <div className="navigation"></div>
+          <p className="text">Welcome to AdminPage</p>
         </div>
       </div>
     );
