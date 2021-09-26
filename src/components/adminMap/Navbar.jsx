@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import "../css/styles.css";
-
+// import "../css/styles.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
 

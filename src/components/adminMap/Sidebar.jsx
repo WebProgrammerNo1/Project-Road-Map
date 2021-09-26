@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import logo from "../css/camera-icon.png";
-import "../css/styles.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "font-awesome/css/font-awesome.min.css";
-import "../css/datepicker3.css";
-// import
+// import "../css/styles.css";
+import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../../../node_modules/font-awesome/css/font-awesome.min.css";
 
 class Sidebar extends Component {
   render() {
     return (
-      <div>
+      <>
         <div id="sidebar-collapse" className="col-sm-3 col-lg-2 sidebar">
           <div className="profile-sidebar">
             <div className="profile-userpic">
@@ -56,9 +54,8 @@ class Sidebar extends Component {
               </a>
             </li>
           </ul>
-          <script src="./js/bootstrap-datepicker.js"></script>
         </div>
-      </div>
+      </>
     );
   }
 }

@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { getAccounts } from "./FakeAccounts";
 import AdminPage from "./AdminPage";
-import "./StarterPage.css";
-import "../components/StarterPage.css";
 
 class StarterPage extends Component {
   state = {

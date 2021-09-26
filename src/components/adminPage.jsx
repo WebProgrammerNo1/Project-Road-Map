@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./adminMap/Navbar";
+import Roads from "./adminMap/Roads";
 import Sidebar from "./adminMap/Sidebar";
 
 class AdminPage extends Component {
@@ -8,6 +9,7 @@ class AdminPage extends Component {
       <div>
         <Navbar />
         <Sidebar />
+        <Roads />
       </div>
     );
   }
