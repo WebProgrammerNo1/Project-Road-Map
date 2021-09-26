@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import "./StarterPage.css";
-
 import "bootstrap/dist/css/bootstrap.css";
 import { getAccounts } from "./FakeAccounts";
+import AdminPage from "./AdminPage";
+import "./StarterPage.css";
+import "../components/StarterPage.css";
 
 class StarterPage extends Component {
   state = {
@@ -15,7 +16,7 @@ class StarterPage extends Component {
     const currentAccountPassword = document.querySelector(".password").value;
     const adminPage = document.querySelector(".adminPage");
     const appPage = document.querySelector(".App");
-    var currentAccount;
+    let currentAccount;
 
     currentAccount = accounts.find((acc) => acc.login === currentAccountLogin);
 
@@ -23,14 +24,14 @@ class StarterPage extends Component {
 
     if (currentAccount.pin === Number(currentAccountPassword)) {
       adminPage.classList.toggle("hidden");
-      appPage.classList.add("hidden");
+      appPage.classList.toggle("hidden");
     }
   };
 
   render() {
     return (
       <div>
-        <div className="App">
+        {/* <div className="App">
           <header className="App-header">
             <div className="App-message">
               <p>Login va Parolingizni kiriting</p>
@@ -56,12 +57,9 @@ class StarterPage extends Component {
               </button>
             </div>
           </header>
-        </div>
+        </div> */}
 
-        <div className="adminPage hidden">
-          <div className="navigation"></div>
-          <p className="text">Welcome to AdminPage</p>
-        </div>
+        <AdminPage />
       </div>
     );
   }

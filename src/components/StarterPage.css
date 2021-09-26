@@ -39,19 +39,3 @@
   outline: none;
   margin: 4px 0;
 }
-
-.adminPage {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hidden {
-  display: none;
-}
-
-.text {
-  font-size: 3rem;
-}

@@ -1,7 +1,7 @@
 const account1 = {
-  login: "kahhorjonov",
-  owner: 'Akbarjon Qoxorjonov',
-  pin: 1204,
+  login: "a",
+  owner: "Akbarjon Qoxorjonov",
+  pin: 1,
 };
 
 const accounts = [account1];
