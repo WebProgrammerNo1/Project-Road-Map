@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../../../node_modules/font-awesome/css/font-awesome.min.css";
 import "../css/styles.css";
+import Map20 from "./Map20";
 
 class Roads extends Component {
   render() {
@@ -19,14 +20,12 @@ class Roads extends Component {
             </ol>
           </div>
           {/* <!--/.row--> */}
-
           <div className="row">
             <div className="col-lg-12">
               <h1 className="page-header">Roads</h1>
             </div>
           </div>
           {/* <!--/.row--> */}
-
           <div className="panel panel-container">
             <div className="row">
               <div className="col-xs-6 col-md-3 col-lg-3 no-padding">
@@ -67,7 +66,6 @@ class Roads extends Component {
               </div>
             </div>
           </div>
-
           <div className="row">
             <div className="col-md-12">
               <div className="panel panel-default">
@@ -89,13 +87,13 @@ class Roads extends Component {
                       <input
                         className="inline"
                         type="button"
-                        value="Добавить"
+                        value="Create Line"
                         id="addPolyline"
                       />
                       <input
                         className="inline"
                         type="button"
-                        value="Удалить"
+                        value="Remove Line"
                         id="dellPolyline"
                       />
                     </span>
@@ -103,13 +101,14 @@ class Roads extends Component {
                       <input
                         className="inline"
                         type="button"
-                        value="Завершить редактирование"
+                        value="Finish editing"
                         id="stopEditPolyline"
                       />
                     </span>
                   </div>
+                  {/* <div id="map"></div> */}
 
-                  <div id="map"></div>
+                  <Map20 />
                 </div>
               </div>
             </div>
