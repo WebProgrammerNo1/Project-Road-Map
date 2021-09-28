@@ -4,8 +4,6 @@ import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../../../node_modules/font-awesome/css/font-awesome.min.css";
 import "../css/styles.css";
 
-import Navbar from "./Navbar";
-
 const geometry = () => {
   geometry = [];
 };
@@ -30,12 +28,12 @@ let planningRoads = [
   ],
 ];
 
-function Map20() {
-  // const state = {
-  //   const {geometry} = Polyline
-  // }
+class Map20 extends Component {
+  state = {
+    geometry: Polyline.geometry,
+  };
 
-  const draw = (ref) => {
+  draw = (ref) => {
     ref.editor.startDrawing();
 
     ref.editor.events.add("statechange", (event) => {
@@ -47,100 +45,103 @@ function Map20() {
     });
   };
 
-  return (
-    <>
-      <div className="row">
-        <div className="col-md-12">
-          <div className="panel panel-default">
-            <div className="panel-heading">
-              Draw lines to the map
-              <span className="pull-right clickable panel-toggle panel-button-tab">
-                <em className="fa fa-toggle-up"></em>
-              </span>
-              <button onClick={geometry} className="pull-right btn btn-danger">
-                Delete Line
-              </button>
-              <button
-                onClick={() => draw()}
-                className="pull-right btn btn-primary"
-              >
-                Draw Line
-              </button>
-            </div>
-            <div className="panel-body">
-              <div className="App">
-                {/* Yandex React Maps */}
-                <YMaps>
-                  <Map
-                    style={{
-                      width: "100%",
-                      height: "80vh",
-                    }}
-                    defaultState={mapState}
-                    modules={["geoObject.addon.editor"]}
-                  >
-                    <Polyline
-                      instanceRef={(ref) => ref && draw(ref)}
-                      geometry={[]}
-                      modules={["geoObject.addon.editor"]}
-                      options={{
-                        editorDrawingCursor: "crosshair",
-                        // editorMaxPoints: "25",
-
-                        fillColor: "#00FF00",
-                        strokeColor: "#0000FF",
-                        strokeWidth: 5,
+  render() {
+    return (
+      <div>
+        <div className="row">
+          <div className="col-md-12">
+            <div className="panel panel-default">
+              <div className="panel-heading">
+                Draw lines to the map
+                <span className="pull-right clickable panel-toggle panel-button-tab">
+                  <em className="fa fa-toggle-up"></em>
+                </span>
+                <button
+                  onClick={geometry}
+                  className="pull-right btn btn-danger"
+                >
+                  Delete Line
+                </button>
+                <button
+                  onClick={() => draw()}
+                  className="pull-right btn btn-primary"
+                >
+                  Draw Line
+                </button>
+              </div>
+              <div className="panel-body">
+                <div className="App">
+                  {/* Yandex React Maps */}
+                  <YMaps>
+                    <Map
+                      style={{
+                        width: "100%",
+                        height: "80vh",
                       }}
-                    />
-                  </Map>
-                </YMaps>
-                <map />
+                      defaultState={mapState}
+                      modules={["geoObject.addon.editor"]}
+                    >
+                      <Polyline
+                        instanceRef={(ref) => ref && draw(ref)}
+                        geometry={this.setState}
+                        modules={["geoObject.addon.editor"]}
+                        options={{
+                          editorDrawingCursor: "crosshair",
+                          // editorMaxPoints: "25",
+
+                          fillColor: "#00FF00",
+                          strokeColor: "#0000FF",
+                          strokeWidth: 5,
+                        }}
+                      />
+                    </Map>
+                  </YMaps>
+                  <map />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 2-map client page map */}
+
+        <div className="row">
+          <div className="col-md-12">
+            <div className="panel panel-default">
+              <div className="panel-heading">Client Page Map</div>
+              <div className="panel-body">
+                <div className="App">
+                  <YMaps>
+                    <Map
+                      style={{
+                        width: "100%",
+                        height: "80vh",
+                      }}
+                      defaultState={mapState}
+                    >
+                      {planningRoads.map((arr, idx) => {
+                        return (
+                          <Polyline
+                            key={idx}
+                            geometry={arr}
+                            options={{
+                              fillColor: "#00FF00",
+                              strokeColor: "#0000FF",
+                              strokeWidth: 5,
+                            }}
+                          />
+                        );
+                      })}
+                    </Map>
+                  </YMaps>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* 2-map client page map */}
-
-      <div className="row">
-        <div className="col-md-12">
-          <div className="panel panel-default">
-            <div className="panel-heading">Client Page Map</div>
-            <div className="panel-body">
-              <div className="App">
-                <YMaps>
-                  <Map
-                    style={{
-                      width: "100%",
-                      height: "80vh",
-                    }}
-                    defaultState={mapState}
-                  >
-                    {}
-
-                    {planningRoads.map((arr, idx) => {
-                      return (
-                        <Polyline
-                          key={idx}
-                          geometry={arr}
-                          options={{
-                            fillColor: "#00FF00",
-                            strokeColor: "#0000FF",
-                            strokeWidth: 5,
-                          }}
-                        />
-                      );
-                    })}
-                  </Map>
-                </YMaps>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+    );
+  }
 }
 
 export default Map20;
