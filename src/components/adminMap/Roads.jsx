@@ -66,7 +66,7 @@ class Roads extends Component {
               </div>
             </div>
           </div>
-          <div className="row">
+          {/* <div className="row">
             <div className="col-md-12">
               <div className="panel panel-default">
                 <div className="panel-heading">
@@ -76,43 +76,12 @@ class Roads extends Component {
                   </span>
                 </div>
                 <div className="panel-body">
-                  <div className="up">
-                    <input
-                      className="inline"
-                      type="text"
-                      id="color_pline"
-                      value="#cc3333"
-                    />
-                    <span>
-                      <input
-                        className="inline"
-                        type="button"
-                        value="Create Line"
-                        id="addPolyline"
-                      />
-                      <input
-                        className="inline"
-                        type="button"
-                        value="Remove Line"
-                        id="dellPolyline"
-                      />
-                    </span>
-                    <span className="inline">
-                      <input
-                        className="inline"
-                        type="button"
-                        value="Finish editing"
-                        id="stopEditPolyline"
-                      />
-                    </span>
-                  </div>
-                  {/* <div id="map"></div> */}
-
                   <Map20 />
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+          <Map20 />
         </div>
 
         {/* Map 2.0 Container */}
