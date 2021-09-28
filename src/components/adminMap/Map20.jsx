@@ -47,12 +47,6 @@ function Map20() {
     });
   };
 
-  const remove = (ref) => {
-    return;
-    // ref.editor.stopDrawing();
-    // ref.editor.events.add
-  };
-
   return (
     <>
       <div className="row">
