@@ -1,12 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import { YMaps, Map, Polyline } from "react-yandex-maps";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../../../node_modules/font-awesome/css/font-awesome.min.css";
 import "../css/styles.css";
 
-const geometry = () => {
-  geometry = [];
-};
 const mapState = {
   center: [41.31983620420839, 69.28014875411984],
   zoom: 10,
@@ -29,10 +26,6 @@ let planningRoads = [
 ];
 
 class Map20 extends Component {
-  state = {
-    geometry: Polyline.geometry,
-  };
-
   draw = (ref) => {
     ref.editor.startDrawing();
 
@@ -56,16 +49,10 @@ class Map20 extends Component {
                 <span className="pull-right clickable panel-toggle panel-button-tab">
                   <em className="fa fa-toggle-up"></em>
                 </span>
-                <button
-                  onClick={geometry}
-                  className="pull-right btn btn-danger"
-                >
+                <button className="pull-right btn btn-danger">
                   Delete Line
                 </button>
-                <button
-                  onClick={() => draw()}
-                  className="pull-right btn btn-primary"
-                >
+                <button className="pull-right btn btn-primary">
                   Draw Line
                 </button>
               </div>
@@ -82,8 +69,8 @@ class Map20 extends Component {
                       modules={["geoObject.addon.editor"]}
                     >
                       <Polyline
-                        instanceRef={(ref) => ref && draw(ref)}
-                        geometry={this.setState}
+                        instanceRef={(ref) => ref && this.draw(ref)}
+                        geometry={[]}
                         modules={["geoObject.addon.editor"]}
                         options={{
                           editorDrawingCursor: "crosshair",
